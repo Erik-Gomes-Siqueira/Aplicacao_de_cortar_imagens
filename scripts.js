@@ -6,7 +6,7 @@ document.getElementById('select-image')
     photoFile.click();
 }
 
-window.addEventListener('DOMContentLoad', () => {
+window.addEventListener('DOMContentLoaded', () => {
     photoFile.addEventListener('change', () => {
 
         let file = photoFile.files.item(0)
@@ -15,6 +15,10 @@ window.addEventListener('DOMContentLoad', () => {
 
         let reader = new FileReader()
         reader.readAsDataURL(file)
+        reader.onload = function(event){
+            let image = document.getElementById('photo-preview')
+            image.src = event.target.result
+        }
 
     })
 })
