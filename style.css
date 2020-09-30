@@ -131,3 +131,11 @@ img {
     width: 200px;
     height: 200px;*/
 }
+
+#crop-image{
+    display: none;
+}
+
+#download{
+    display: none;
+}
